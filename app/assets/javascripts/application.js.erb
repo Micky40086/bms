@@ -12,3 +12,18 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require vendor/vue.min
+//= require vendor/firebase-app
+//= require vendor/firebase-auth
+
+
+// Initialize Firebase
+var config = {
+  apiKey: "<%= Rails.application.credentials.firebase_api_key %>",
+  authDomain: "bms-c6fdd.firebaseapp.com",
+  databaseURL: "https://bms-c6fdd.firebaseio.com",
+  projectId: "bms-c6fdd",
+  storageBucket: "bms-c6fdd.appspot.com",
+  messagingSenderId: "1089450822968"
+}
+firebase.initializeApp(config)
