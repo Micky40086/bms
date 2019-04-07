@@ -3,7 +3,7 @@
 <div id="login-page">
   <div @click="loginWithGoogle()">Login By Google</div>
 </div>
-
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
   var vm = new Vue({
     el: '#login-page',
@@ -12,6 +12,7 @@
     },
     methods: {
       loginWithGoogle: function() {
+        var self = this
         var provider = new firebase.auth.GoogleAuthProvider()
 
         firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -19,6 +20,8 @@
           var token = result.credential.accessToken
           // The signed-in user info.
           var user = result.user
+
+          self.checkUserSigned()
           // ...
         }).catch(function(error) {
           // Handle Errors here.
@@ -37,9 +40,20 @@
           if (user) {
             // console.log(user)
             console.log('User signed')
-            // user.getIdToken().then(function(idToken) {  // <------ Check this line
-            //   console.log(idToken); // It shows the Firebase token now
-            // })
+            user.getIdToken().then(function(idToken) {  // <------ Check this line
+              axios.post('/login', {
+                token: idToken
+              }, {
+                headers: {
+                  'X-CSRF-Token': document.querySelector('[name=csrf-token]').content,
+                  'Content-Type': 'application/json'
+                }
+              }).then(res => {
+                if (res.status === 200) {
+                  window.location = '/'
+                }
+              })
+            })
           } else {
             console.log('No User signed')
           }
@@ -47,7 +61,7 @@
       }
     },
     mounted: function() {
-      this.checkUserSigned()
+      // this.checkUserSigned()
     }
   })
 </script>
