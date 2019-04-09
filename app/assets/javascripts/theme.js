@@ -17,4 +17,4 @@
 //= require theme/plugins/arrive.min
 //= require theme/plugins/chartist.min
 //= require theme/plugins/bootstrap-notify
-//= require theme/material-dashboard.js
+//= require theme/material-dashboard
