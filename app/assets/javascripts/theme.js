@@ -18,3 +18,5 @@
 //= require theme/plugins/chartist.min
 //= require theme/plugins/bootstrap-notify
 //= require theme/material-dashboard
+//= require vendors/vue
+//= require vendors/marked.min

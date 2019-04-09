@@ -79,13 +79,18 @@
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                       <div class="form-group">
                         <label>About Me</label>
                         <div class="form-group">
-                          <div class="form-control h-300"></div>
+                          <%# <label class="bmd-label-floating">Content</label> %>
+                          <textarea class="form-control" rows="5" v-model="markdown">
+
+                          </textarea>
                         </div>
                       </div>
+                    </div>
+                    <div class="col-md-6" v-html="showMarkdownHtml">
                     </div>
                   </div>
                   <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
@@ -105,4 +110,19 @@
 <!-- Initialize Quill editor -->
 
 <% content_for :script do %>
+<script>
+var vm = new Vue({
+  el: '.content',
+  data: {
+    markdown: ''
+  },
+  computed: {
+    showMarkdownHtml: function() {
+      return marked(this.markdown)
+    }
+  },
+  methods: {
+  }
+})
+</script>
 <% end %>
