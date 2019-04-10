@@ -1,0 +1,5 @@
+menu:
+  - name: 部落格文章
+    controller: blog_articles
+    href: /admins/blog_articles
+    icon: dashboard

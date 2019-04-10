@@ -4,6 +4,8 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
 
+  has_many :blog_articles      
+  
   def self.from_omniauth(access_token)
     data = access_token.info
     admin = Admin.where(email: data["email"]).first

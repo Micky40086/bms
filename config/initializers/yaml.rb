@@ -1,0 +1,1 @@
+AdminSideBar = YAML.load_file('./config/admin_sidebar.yml')

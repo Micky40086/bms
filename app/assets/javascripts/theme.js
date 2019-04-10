@@ -1,3 +1,4 @@
+//= require rails-ujs
 //= require theme/core/jquery.min
 //= require theme/core/popper.min
 //= require theme/core/bootstrap-material-design.min

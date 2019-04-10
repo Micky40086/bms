@@ -17,8 +17,19 @@
   <%= stylesheet_link_tag    'theme/material-dashboard', media: 'all' %>
 </head>
 
-<body class="">
-  <%= yield %>
+<body>
+  <!-- Include stylesheet -->
+  <div class="wrapper ">
+    <%= render 'partials/admin/sidebar' %>
+    <div class="main-panel">
+      <%= render 'partials/admin/nav' %>
+      <div class="content">
+        <%= yield %>
+      </div>
+      <%= render 'partials/admin/footer' %>
+    </div>
+  </div>
+  <%#= render 'partials/admin/sidebar_filters' %>
   <!--   Core JS Files   -->
   <%= javascript_include_tag 'theme' %>
   <%= yield :script %>
