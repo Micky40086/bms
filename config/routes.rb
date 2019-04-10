@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount ApiRoot => ApiRoot::PREFIX
+
   namespace :admins do
     resources :blog_articles, except: [:show]
   end
