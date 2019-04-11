@@ -1,5 +1,5 @@
 class BlogArticles::V1 < Grape::API
   get '/list' do
-    {message: 'HEHE'}
+    @current_admin.blog_articles
   end
 end

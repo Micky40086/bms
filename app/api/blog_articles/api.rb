@@ -1,6 +1,7 @@
 class BlogArticles::API < Grape::API
   before do
-    error!('Unauthorized', 401) unless headers['X-Auth-Header'] === 'Mickey'
+    @current_admin = env['API_ADMIN']
+    error!('Unauthorized', 401) unless @current_admin
   end
 
   mount BlogArticles::V1 => '/v1/blog_articles'
