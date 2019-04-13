@@ -3,3 +3,9 @@ menu:
     controller: blog_articles
     href: /admins/blog_articles
     icon: dashboard
+
+  - name: 部落格Tag
+    controller: blog_tags
+    href: /admins/blog_tags
+    icon: dashboard
+    
