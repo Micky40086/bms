@@ -41,10 +41,10 @@
  @import "material-dashboard/misc";
  @import "material-dashboard/social-buttons";
 
-@import "material-dashboard/cards";
-@import "material-dashboard/cards/card-stats";
-@import "material-dashboard/cards/card-profile";
-@import "material-dashboard/cards/card-plain";
+ @import "material-dashboard/cards";
+ @import "material-dashboard/cards/card-stats";
+ @import "material-dashboard/cards/card-profile";
+ @import "material-dashboard/cards/card-plain";
 
  //plugin scss
  @import "material-dashboard/plugins/animate";
@@ -52,4 +52,5 @@
  @import "material-dashboard/plugins/perfect-scrollbar";
 
  @import "material-dashboard/responsive";
+ @import "../vendors/select2.min";
  @import "../normal";

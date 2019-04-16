@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_13_054520) do
+ActiveRecord::Schema.define(version: 2019_04_16_062851) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 2019_04_13_054520) do
   create_table "api_tokens", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "admin_id"
     t.string "key"
+  end
+
+  create_table "blog_article_tag_relations", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "blog_article_id"
+    t.bigint "blog_tag_id"
+    t.index ["blog_article_id"], name: "index_blog_article_tag_relations_on_blog_article_id"
+    t.index ["blog_tag_id"], name: "index_blog_article_tag_relations_on_blog_tag_id"
   end
 
   create_table "blog_articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

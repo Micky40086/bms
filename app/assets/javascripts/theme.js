@@ -21,3 +21,4 @@
 //= require theme/material-dashboard
 //= require vendors/vue
 //= require vendors/marked.min
+//= require vendors/select2.min
