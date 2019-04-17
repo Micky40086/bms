@@ -8,4 +8,5 @@ class ApiRoot < Grape::API
   end
   
   mount BlogArticles::API
+  add_swagger_documentation
 end

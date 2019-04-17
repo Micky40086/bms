@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   mount ApiRoot => ApiRoot::PREFIX
+  mount GrapeSwaggerRails::Engine => "/apidoc"
 
   namespace :admins do
     resources :blog_articles, except: [:show]
