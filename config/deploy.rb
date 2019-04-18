@@ -4,6 +4,7 @@ lock "~> 3.11.0"
 
 set :application, "bms"
 set :repo_url, "git@github.com:Micky40086/bms.git"
+set :branch, "master"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
