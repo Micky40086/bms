@@ -7,6 +7,6 @@ class ApiRoot < Grape::API
     error!('404 Not Found', 404) # or something else
   end
   
-  mount BlogArticles::API
+  mount V1::Base => 'v1'
   add_swagger_documentation
 end

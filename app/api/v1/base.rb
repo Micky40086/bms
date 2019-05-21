@@ -1,8 +1,8 @@
-class BlogArticles::API < Grape::API
+class V1::Base < Grape::API
   before do
     @current_admin = env['API_ADMIN']
     error!('Unauthorized', 401) unless @current_admin
   end
 
-  mount BlogArticles::V1 => '/v1/blog_articles'
+  mount V1::BlogArticle => '/blog_articles'
 end
